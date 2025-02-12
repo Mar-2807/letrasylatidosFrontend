@@ -25,7 +25,7 @@ function ForoBookCard({ foro }) {
       setLoading(true);
       setError("");
       try {
-        const { data } = await axios.get(`${API_URL}/api/books/search`, { withCredentials: true }, {
+        const { data } = await axios.get(`${API_URL}/api/books/search`, {
           params: { query: foro.bookTitle }
         });
 
