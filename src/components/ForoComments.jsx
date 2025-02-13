@@ -4,7 +4,7 @@ import { useForos } from "../context/ForosContext";
 import { useAuth } from "../context/AuthContext";
 import { useEffect } from "react";
 import { format } from "date-fns";
-import { es } from "date-fns/locale";
+//import { es } from "date-fns/locale";
 
 function ForoComments({ foroId, postCommentErrors }) {
     const colors = ["bg-creme", "bg-green-creme", "bg-white-gray", "bg-blue-creme", "bg-purple-creme"];
@@ -83,9 +83,6 @@ function ForoComments({ foroId, postCommentErrors }) {
                                         <img src="/imgs/profile.png" className="rounded-full w-8 h-8 sm:w-10 sm:h-10" />
                                         <p className="font-bold text-sm sm:text-base">{comment.userRealname} {comment.userLastname}</p>
                                     </div>
-                                    <p className="text-xs sm:text-sm text-dark-gray mt-2 sm:mt-0">
-                                        {format(new Date(comment.createdAt), "dd '-' MM '-' yyyy", { locale: es })}
-                                    </p>
                                 </div>
                                 <p className="text-gray-700 break-words whitespace-pre-wrap text-sm sm:text-base">
                                     {comment.comment}
